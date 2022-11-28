@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://thymeleaf.org">
+		
+		<head>
+			<title>[[${game.title}]]</title>
+			<script src="https://kit.fontawesome.com/ea57d89992.js" crossorigin="anonymous"></script>
+			<link href="/css/videogame.css" rel="stylesheet" >
+		</head>
+		
+		<body>
+			<div class="container">
+				<div class="text">
+					<p>Game View</p>
+				</div>
+				<div class="default" id="title">
+		 			<h3>[[${game.title}]] <i class="fa-regular fa-pen-to-square" ></i> </h3> 
+		 		</div>
+		 		
+				<div class="default" id="description" >
+		 			<b>Description: </b>[[${game.description}]]	 		
+		 		</div>
+		 		<div class="default" id="rating">
+		 			<b>Rating:</b> [[${game.rating}]]/10
+		 		</div>
+		 		<div  class="default" th:if="${game.completed == true} " id="complete">
+		 			<b>Complete:</b> Finished
+		 		</div>
+		 		<div class="default" th:if="${game.completed == false} " id="complete">
+		 			<b>Complete:</b> Not Finished
+		 		</div>
+		 		
+				<form action="/update" method="post" style="display: none;" class="form" id="update">
+					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" >
+					<div>
+			 			<b>Title</b><input type="text" th:field=${game.title} ><i class="fa-regular fa-pen-to-square" id="editIcon2"></i>
+			 		</div>
+					<div>
+			 			<b>Description:</b>
+					<br>
+					<textarea rows="4" cols="26" th:field=${game.description} ></textarea>
+			 		</div>
+	
+			 		<div>
+						<b>Rating:</b><input type="range" min="0" max="10" step="1" id="ratingInput" oninput="ratingOutput.value = ratingInput.value" th:field="${game.rating}">
+						<output id="ratingOutput">[[${game.rating}]]</output>
+					</div>
+			 		<div>
+						Complete <input type="checkbox" th:field="${game.completed}">
+					</div>
+					<div>
+						<input type="hidden" th:field="${game.user}">
+					</div>
+					<div>
+						<input type="hidden" th:field=${game.id}>
+					</div>
+					
+			 		<input type="submit" value="Submit Changes" class="inputStyle" >
+		 		</form>
+		 		<form action="/home"  method="get" id="home" >
+		 			<input type="submit" value="Home" class="inputStyle" >
+		 		</form>
+				<form th:action="@{/delete/videogame/{gameId}(gameId=${game.id})}" method="post" id="delete" >
+					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" >
+					<input type="submit" value="Delete Game Review" class="inputStyle" >
+				</form>
+			</div>
+	 		<script type="text/javascript" src="/js/videogame.js" ></script>
+		</body>
+	</html>

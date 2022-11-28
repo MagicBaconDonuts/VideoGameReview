@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>VideoGame</title>
+		<link href="/css/register-game.css" rel="stylesheet" >
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="create">
+				<p>Create A Game</p>
+			</div>
+			<div class="formCreate">
+				<form action="" method="post">
+					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+					<div>
+						 <b>Title:</b>
+						 <input type="text" th:field="${game.title}"  class="title">
+					</div>
+					<div>
+						<b>Description:</b>
+						<br>
+						<textarea rows="4" cols="32" th:field=${game.description} ></textarea>
+					</div>
+					<div>
+						<b>Completed:</b>
+						<input type="checkbox" th:field=${game.completed}>
+					</div>
+					<div>
+						<b>Rating:</b>
+						<input type="range" min="0" max="10" step="1" id="ratingInput" oninput="ratingOutput.value = ratingInput.value" th:field="${game.rating}">
+						<output id="ratingOutput">5</output>
+					</div>
+					<button type="submit">Submit</button>
+				</form>
+				<form action="/home" method="get"  class="home">
+						<input type="submit" value="Home" >
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>
