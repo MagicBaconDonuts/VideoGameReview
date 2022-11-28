@@ -77,6 +77,14 @@ public class UserController {
 		videoGameService.delete(game);
 		return"redirect:/home";
 	}
+
+	@PostMapping("/delete/account/{username}")
+	public String deleteAccount(@PathVariable String username) {
+		User user = userService.findByUsername(username);
+		userService.deleteByUser(user);
+		return "redirect:/login";
+	}
+	
 //	@PostMapping("/users/exists")		future update
 //	@ResponseBody
 //	public Boolean checkExists(@RequestBody UserDTO user) {

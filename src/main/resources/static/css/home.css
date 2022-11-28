@@ -12,6 +12,7 @@ body{
 .create{
 	display: flex;
 	justify-content: center;
+	margin-top: -70px;
 }
 .logoimg{
 	width: 15%;    
@@ -22,10 +23,17 @@ body{
 	margin-right: 1%;
 	display: flex;
 	justify-content: space-between;
-	
 }
 .logout{
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 1%;
 }
+
+.account{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 1%;
+	margin-bottom: 1%;
+}
+.box{}
