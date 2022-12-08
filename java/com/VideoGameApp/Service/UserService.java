@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.VideoGameApp.Domain.Authorities;
 import com.VideoGameApp.Domain.User;
 import com.VideoGameApp.Domain.UserDTO;
+import com.VideoGameApp.Domain.VideoGame;
 import com.VideoGameApp.Domain.Enum.Status;
 import com.VideoGameApp.Repositories.AuthoritiesRepository;
 import com.VideoGameApp.Repositories.UserRepoistory;
@@ -24,6 +25,8 @@ public class UserService {
 	private UserRepoistory userRepo;
 	@Autowired
 	private AuthoritiesRepository authorRepo;
+	@Autowired
+	private VideoGameService videoGameService;
 
 	public User createUser(UserDTO user) {
 		User userCreating = new User();
@@ -54,6 +57,9 @@ public class UserService {
 	}
 
 	public void deleteByUser(User user) {
+		for(VideoGame game: user.getVideoGame()) {
+			videoGameService.delete(game);
+		}
 		userRepo.delete(user);
 	}
 }
