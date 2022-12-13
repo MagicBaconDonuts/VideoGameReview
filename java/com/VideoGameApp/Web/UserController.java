@@ -84,6 +84,13 @@ public class UserController {
 		userService.deleteByUser(user);
 		return "redirect:/login";
 	}
+	@PostMapping("/update-name/{username}")
+	public String updateUsername(User user, @PathVariable String username) {
+		User userFound = userService.findByUsername(username);
+		userFound.setUsername(user.getUsername());
+		userService.save(userFound);
+		return "redirect:/home";
+	}
 	
 //	@PostMapping("/users/exists")		future update
 //	@ResponseBody

@@ -62,4 +62,8 @@ public class UserService {
 		}
 		userRepo.delete(user);
 	}
+
+	public void save(User userFound) {
+		userRepo.save(userFound);
+	}
 }

@@ -12,7 +12,12 @@ body{
 .create{
 	display: flex;
 	justify-content: center;
-	margin-top: -70px;
+	margin-top: -120px;
+}
+.divider{
+    width:8px;
+    height:auto;
+    display:inline-block;
 }
 .logoimg{
 	width: 15%;    
@@ -36,4 +41,12 @@ body{
 	margin-right: 1%;
 	margin-bottom: 1%;
 }
-.box{}
+.renamebox{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 1%;
+	margin-bottom: 1%;
+}
+.user{
+	display: flex;
+}
