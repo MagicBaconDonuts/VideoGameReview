@@ -1,0 +1,31 @@
+* {
+  margin: 0%;
+  font-size: 25px;
+}
+body{
+  text-align: center;
+  background: papayawhip;
+}
+.text{
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.container{
+	margin-top: 15px;
+}
+p{
+	font-size: 30px;
+	font-weight: bold;
+}
+.inputStyle {
+	margin-top: 5px;
+	background-color: none;
+	background: none;
+	border: none;
+}
+.inputStyle:hover {
+	font-weight: 900;
+}
+#home{
+	margin-top: 5px;
+}

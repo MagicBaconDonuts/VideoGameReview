@@ -1,0 +1,76 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 25px;
+	background: papayawhip;
+}
+
+
+.logo{
+	margin-top: 1%;
+	margin-left: 1%;
+}
+.logoimg{
+	width: 15%;
+    height: auto;
+}
+
+.controllerimg{
+	padding-left: 10%;
+	padding-top: 4%;
+	padding-right: 15%;
+	
+}
+.wrapper{
+	display: flex;
+}
+.imgforController{
+	width: 140%;
+    height: auto;
+}
+.login{
+	margin-top: 80px;
+}
+
+.box{
+	border: 2px solid #333;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.legend{
+	margin-bottom: 3px;
+}
+
+.statement{
+	margin-bottom: 3px;
+}
+.inputbox{
+	display: flex;
+}
+.btn{
+	display: inline;
+}
+
+#form1{
+	display: inline;
+}
+#form2{
+	display: inline;
+}
+#loginbtn{
+	margin-left: 50px;
+	margin-top: 7px;
+	background-color:  #87BCDE;
+}
+#registerbtn{
+	margin-left: 20px;
+	background-color:  #87BCDE;
+}
+#loginbtn:hover {
+	background-color: #77B6EA;
+}
+#registerbtn:hover {
+	background-color: #77B6EA;
+}
